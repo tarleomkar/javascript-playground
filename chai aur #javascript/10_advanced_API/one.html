@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .card {
+            /* Add shadows to create the "card" effect */
+            margin: 25px;
+            padding: 25px;
+            width: 500px;
+            height: 600px;
+            box-shadow: 0 4px 8px 0 rgba(146, 38, 38, 0.686);
+            transition: 0.3s;
+            color: white;
+        }
+        .container {
+            padding: 2px 16px;
+        }
+
+        h3 {
+            color: white;
+        }
+    </style>
+</head>
+<body style="background-color: #212121;">
+    <div class="card">
+        <h3>BatMan</h3> 
+        <img src="/batman-logo-black-batman-wallpaper-preview.jpg" alt="" width="40%" height="400px">
+        <div class="container">
+            <button id="followers">Followers</button>
+            <p>SDE @Unknown</p>
+            <span id="followersCount"></span> <!-- Element to display followers count -->
+        </div>
+    </div>
+    <script>
+        const requestUrl = 'https://api.github.com/users/hiteshchoudhary';
+        const xhr = new XMLHttpRequest();
+        xhr.open('GET', requestUrl);
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === 4) {
+                const data = JSON.parse(this.responseText);
+                const followersButton = document.getElementById('followers');
+
+                followersButton.addEventListener('click', function() {
+                    document.getElementById('followersCount').innerText = `Followers: ${data.followers}`;
+                });
+            }
+        };
+        xhr.send();
+    </script>
+</body>
+</html>

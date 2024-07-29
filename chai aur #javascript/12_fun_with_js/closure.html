@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hii</title>
+</head>
+<body style="background-color: #313131; color: wheat;">
+    <script>
+        // function init()
+        // {
+        //     let name  = "Mozilla";
+        //     function displayName()
+        //     {
+        //         console.log(name);
+        //     }
+        //     displayName();
+        // }
+        // init();
+
+        // 2.
+        // function outer()
+        // {
+        //     let username = "omkar"
+        //     // console.log("Outer", secret);
+        //     function inner()
+        //     {
+        //         let secret = 123;
+        //         console.log("Inner: ", username);
+        //     }
+        //     function innerTwo()
+        //     {
+        //         console.log("innerTwo", username);
+        //         console.log(secret);
+        //     }
+        //     inner()
+        //     innerTwo()
+        // }
+        // console.log("Too Outer", username);
+
+        // Clouser
+        function makeFunc()
+        {
+            const name = "Mozilla";
+            function displayName()
+            {
+                console.log(name);
+            }
+            return displayName;
+        }
+
+        const myFunc = makeFunc();
+        myFunc();
+    </script>
+</body>
+</html>

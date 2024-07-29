@@ -1,0 +1,28 @@
+<!-- A callback is a function passed as an argument to another function. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Using a callback, you could call the calculator function (myCalculator) with a callback (myCallback), and let the calculator function run the callback after the calculation is finished:</p>
+    <br>
+    <p id="demo"></p>
+    <script>
+        function myCallBack(some)
+        {
+        document.getElementById("demo").innerHTML = some;
+        }
+
+        function myCalculator(num1, num2, myCallBack)
+        {
+            let sum = num1 + num2;
+            myCallBack(sum);
+        }
+
+        myCalculator(5, 5, myCallBack)
+    </script>
+</body>
+</html>
